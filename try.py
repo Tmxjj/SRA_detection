@@ -1,7 +1,6 @@
-import numpy as np
-ann_file = 'data/trainval/dota_annfiles/1.txt'
-with open(ann_file) as f:
-        s = f.readlines()
-        for si in s:
-            bbox_info = si.split(',')
-            poly = np.array(bbox_info[:8], dtype=np.float32)
+import torch
+print(f"PyTorch Version: {torch.__version__}")
+print(f"CUDA Version: {torch.version.cuda}")
+print(f"CUDA Available: {torch.cuda.is_available()}")
+if torch.cuda.is_available():
+    print(f"Device Name: {torch.cuda.get_device_name(0)}")

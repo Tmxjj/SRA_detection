@@ -9,6 +9,7 @@ import warnings
 import mmcv
 import torch
 import torch.distributed as dist
+# from mmengine.config import Config
 from mmcv import Config, DictAction
 from mmcv.runner import get_dist_info, init_dist
 from mmcv.utils import get_git_hash
@@ -109,7 +110,7 @@ def main():
     if args.gpu_ids is not None:
         cfg.gpu_ids = args.gpu_ids
     else:
-        cfg.gpu_ids = range(1) if args.gpus is None else range(args.gpus)
+        cfg.gpu_ids = range(1,2) if args.gpus is None else range(args.gpus)
 
     # init distributed env first, since logger depends on the dist info.
     if args.launcher == 'none':
