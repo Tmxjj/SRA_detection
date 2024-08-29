@@ -5,6 +5,12 @@ import os
 import os.path as osp
 import time
 import warnings
+# solve the Keyerror:"RANK"
+# os.environ['RANK'] = '0'
+# os.environ['WORLD_SIZE'] = '4'
+# os.environ['MASTER_ADDR'] = '127.0.0.1'
+# os.environ['MASTER_PORT'] = '28765'
+
 
 import mmcv
 import torch
@@ -110,7 +116,7 @@ def main():
     if args.gpu_ids is not None:
         cfg.gpu_ids = args.gpu_ids
     else:
-        cfg.gpu_ids = range(1,2) if args.gpus is None else range(args.gpus)
+        cfg.gpu_ids = range(0,1) if args.gpus is None else range(args.gpus)
 
     # init distributed env first, since logger depends on the dist info.
     if args.launcher == 'none':
