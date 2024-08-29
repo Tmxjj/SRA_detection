@@ -1,5 +1,5 @@
 dataset_type = 'DOTADataset'
-data_root = '/workspace/code/SARDet_100K/data/split_ss_dota/'
+data_root = '/workspace/SARDet_100K/data/split_ss_dota/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -50,10 +50,8 @@ data = dict(
     workers_per_gpu=1,
     train=dict(
         type='DOTADataset',
-        ann_file=
-        '/workspace/code/SARDet_100K/data/split_ss_dota/train/annfiles/',
-        img_prefix=
-        '/workspace/code/SARDet_100K/data/split_ss_dota/train/images/',
+        ann_file='/workspace/SARDet_100K/data/split_ss_dota/train/annfiles/',
+        img_prefix='/workspace/SARDet_100K/data/split_ss_dota/train/images/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(type='LoadAnnotations', with_bbox=True),
@@ -82,10 +80,8 @@ data = dict(
         version='le90'),
     val=dict(
         type='DOTADataset',
-        ann_file=
-        '/workspace/code/SARDet_100K/data/split_ss_dota/train/annfiles/',
-        img_prefix=
-        '/workspace/code/SARDet_100K/data/split_ss_dota/train/images/',
+        ann_file='/workspace/SARDet_100K/data/split_ss_dota/train/annfiles/',
+        img_prefix='/workspace/SARDet_100K/data/split_ss_dota/train/images/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(
@@ -107,9 +103,8 @@ data = dict(
         version='le90'),
     test=dict(
         type='DOTADataset',
-        ann_file='/workspace/code/SARDet_100K/data/split_ss_dota/test/images/',
-        img_prefix=
-        '/workspace/code/SARDet_100K/data/split_ss_dota/test/images/',
+        ann_file='/workspace/SARDet_100K/data/split_ss_dota/test/images/',
+        img_prefix='/workspace/SARDet_100K/data/split_ss_dota/test/images/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(

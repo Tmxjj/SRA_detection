@@ -31,7 +31,6 @@ class DOTADataset(CustomDataset):
         difficulty (bool, optional): The difficulty threshold of GT.
     """
     CLASSES = ('ship',)
-
     PALETTE = [(0, 51, 153)]
 
     def __init__(self,
