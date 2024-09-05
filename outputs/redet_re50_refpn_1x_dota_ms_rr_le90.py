@@ -316,4 +316,4 @@ model = dict(
             max_per_img=2000)))
 work_dir = 'outputs'
 auto_resume = False
-gpu_ids = range(0, 2)
+gpu_ids = range(0, 1)
